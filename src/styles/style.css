@@ -1,9 +1,6 @@
 * {
     box-sizing: border-box;
   }
-form{
-    min-height: 100vh;
-}
 .headerName{
     grid-column: 1 / -1;
 }
