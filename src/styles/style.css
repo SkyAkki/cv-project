@@ -1,0 +1,14 @@
+* {
+    box-sizing: border-box;
+  }
+form{
+    min-height: 100vh;
+}
+.headerName{
+    grid-column: 1 / -1;
+}
+.component{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-items: center;
+}
