@@ -2,19 +2,19 @@ import React from "react";
 
 class ConfirmButton extends React.Component{
     constructor(props){
-        super(props)
-        this.handleBasic = this.handleBasic.bind(this)
+        super(props);
+        this.handleBasic = this.handleBasic.bind(this);
     }
     handleBasic(event){
-        this.props.setBasicAndEdit(true,false)
-      }
+        this.props.setSubmitAndEdit(true,false);
+    }
     render(){
-        var basicForm = document.querySelectorAll('.basic input')
+        var formElement = document.querySelectorAll(`.${this.props.parentSection} input`);
         if(this.props.editProp === false){
-        basicForm.forEach(element => element.disabled = true)
+            formElement.forEach(element => element.disabled = true);
         }
         else{
-        basicForm.forEach(element => element.disabled = false)
+            formElement.forEach(element => element.disabled = false);
         }
         return (
             <button type='button' onClick={this.handleBasic}>Confirm</button>
