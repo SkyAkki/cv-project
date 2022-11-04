@@ -1,17 +1,22 @@
-import React from 'react'
-import '../styles/style.css'
+import React from 'react';
+import '../styles/style.css';
+import ConfirmButton from './ConfirmButton';
+import EditButton from './EditButton';
+import GenericSection from './GenericSection';
 
-class Section extends React.Component{
+class Section extends GenericSection{
     constructor(props){
         super(props)
         this.state = {
             basicName : '',
             basicEmail : '',
             basicPhone : '',
+            isEdit : true,
+            isSubmit : true,
         }
-        this.nameHandler = this.nameHandler.bind(this)
-        this.emailHandler = this.emailHandler.bind(this)
-        this.phoneHandler = this.phoneHandler.bind(this)
+        this.nameHandler = this.nameHandler.bind(this);
+        this.emailHandler = this.emailHandler.bind(this);
+        this.phoneHandler = this.phoneHandler.bind(this);
     }
     nameHandler(event){
         this.setState({
@@ -28,7 +33,6 @@ class Section extends React.Component{
           basicPhone : event.target.value
         })
     }
-
     render() {
         return(
         <form className="basicForm">
@@ -49,6 +53,8 @@ class Section extends React.Component{
               </li>
             </ul>
           </fieldset>
+          <ConfirmButton setSubmitAndEdit = {this.setSubmitAndEdit} editProp = {this.state.isEdit} parentSection = 'basic'></ConfirmButton>
+          <EditButton setSubmitAndEdit = {this.setSubmitAndEdit}/>
         </form>
             // <div className='component'>
             //     <h1 className='headerName'>{this.props.name}</h1>
