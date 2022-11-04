@@ -11,6 +11,9 @@ class GenericSection extends React.Component{
           isSubmit : submitValue
         })
     }
+    addSection(event){
+        console.log(event)
+    }
 }
 
 export default GenericSection

@@ -6,7 +6,7 @@ import Education from './components/Education'
 class App extends React.Component {
   render(){
     return (
-      <div>
+      <div className='resume'>
         <Section></Section>
         <Education></Education>
       </div>
